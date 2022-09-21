@@ -1,1 +1,1 @@
-# MSA
+# MERN Stack App Group Project
