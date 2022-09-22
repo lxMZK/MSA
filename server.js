@@ -9,6 +9,6 @@ app.use(express.urlencoded({ extended: false }))
 const booksController = require('./src/controllers/books_controller')
 app.use('/books', booksController)
 
-app.listen(process.env.PORT, () => {
-    console.log(`listening on port ${process.env.PORT}`)
+app.listen(process.env.SERVER_PORT, () => {
+    console.log(`listening on port ${process.env.SERVER_PORT}`)
 })
