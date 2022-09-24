@@ -11,9 +11,10 @@ module.exports = (sequelize, DataTypes) => {
     }
 
     Book.init({
-        ISBN: {
+        isbn: {
             type: DataTypes.INTEGER,
             primaryKey: true,
+            allowNull: false
         },
         title: {
             type: DataTypes.STRING,
@@ -28,7 +29,7 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },
         price: {
-            type: DataTypes.FLOAT,
+            type: DataTypes.DOUBLE,
             allowNull: false
         },
         rating: {
