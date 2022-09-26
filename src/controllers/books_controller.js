@@ -1,5 +1,5 @@
 const books = require('express').Router()
-const db = require('../models')
+const db = require('../models/db')
 const { Book } = db
 
 books.post('/', async (req,res)=>{

@@ -1,20 +1,17 @@
 import './App.css';
 import React, { useState, useEffect } from 'react'
+import BookCard from './components/BookCard'
 
 function App() {
 
-  const [returnedData, setReturnedData] = useState()
+  const [returnedData, setReturnedData] = useState([])
 
   const fetchData = async () => {
-    const newData = await fetch('/books', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'applicaiton/json'
-      }
+    const response = await fetch('/books', {
+      method: 'POST'
     })
-      .then(res => res.json())
-    setReturnedData(newData)
+    const resData = await response.json()
+    setReturnedData(resData)
   }
 
   useEffect(() => {
@@ -30,6 +27,8 @@ function App() {
       <h3>Tavoy Walls / Alex Mizak / Quenton Powell</h3>
       <br />
       <br />
+      <BookCard book={returnedData[0]}/>
+      <BookCard book={returnedData[1]}/>
     </div>
   );
 }
