@@ -4,7 +4,7 @@ const { Sequelize } = require('sequelize')
 
 require('dotenv').config()
 app.use(express.json())
-app.use(express.urlencoded({ extended: false }))
+app.use(express.urlencoded({ extended: true }))
 
 const booksController = require('./src/controllers/books_controller')
 app.use('/books', booksController)
