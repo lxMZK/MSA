@@ -53,11 +53,29 @@ h1 {
   font-weight: 500;
 }
 
-.bookAuthor,
-.bookDesc {
+.bookAuthor {
   padding-bottom: 10px;
+}
+
+.details {
+  margin: 0 0 25px 0;
+}
+
+.lessDetails {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
 }
 
 .card-text {
   margin: 0;
+}
+
+.details {
+  color: blue;
+}
+
+.details:hover {
+  cursor: pointer;
 }
