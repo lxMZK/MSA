@@ -1,10 +1,63 @@
 .App {
   text-align: center;
+  background-color: lightgray;
+  height: 100vh;
+}
+
+h1 {
+  margin: 0;
 }
 
 .card {
   width: 20rem;
-  border: solid grey 1px;
-  border-radius: 15px;
   display: inline-block;
+  margin: 20px;
+  background-color: white;
+  border-radius: 20px;
+}
+
+.coverContainer {
+  height: 150px;
+  overflow: hidden;
+  transition: all 1s;
+}
+
+.coverContainer:hover {
+  overflow: visible;
+}
+
+.bookCover {
+  border-radius: 20px 20px 0 0;
+  width: 20rem;
+  transition: all 250ms;
+}
+
+.bookCover:hover {
+  transform: scale(1.1);
+  border-radius: 20px;
+  margin: 0 0 -200px 0;
+}
+
+.bookInfo {
+  text-align: left;
+  padding: 0 10px 10px 10px;
+}
+
+.bookContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bookTitle {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.bookAuthor,
+.bookDesc {
+  padding-bottom: 10px;
+}
+
+.card-text {
+  margin: 0;
 }
