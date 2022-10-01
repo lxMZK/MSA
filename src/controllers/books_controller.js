@@ -11,7 +11,7 @@ books.post('/', async (req, res) => {
     }
 })
 
-books.post('/bestsellers', async (req,res)=> {
+books.post('/bestsellers', async (req, res) => {
     try {
         const foundBooks = await Book.findAll({
             order: [['amount_sold', 'DESC']]
@@ -22,13 +22,24 @@ books.post('/bestsellers', async (req,res)=> {
     }
 })
 
-books.post('/toprated', async (req,res)=>{
+books.post('/toprated', async (req, res) => {
     try {
         const foundBooks = await Book.findAll({
             order: [['rating', 'DESC']]
         })
         res.status(200).json(foundBooks)
-    } catch(err) {
+    } catch (err) {
+        res.status(500).json(err)
+    }
+})
+
+books.post('/unbeatableprices', async (req, res) => {
+    try {
+        const foundBooks = await Book.findAll({
+            order: [['price', 'ASC']]
+        })
+        res.status(200).json(foundBooks)
+    } catch (err) {
         res.status(500).json(err)
     }
 })

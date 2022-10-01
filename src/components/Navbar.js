@@ -17,6 +17,7 @@ export default function Navigation(props) {
           <Nav.Link href="/">Home</Nav.Link>
           <Nav.Link href="/BestSellers">Best Sellers</Nav.Link>
           <Nav.Link href="/TopRated">Top Rated</Nav.Link>
+          <Nav.Link href="/UnbeatablePrices">Unbeatable Prices</Nav.Link>
         </Nav>
         <Nav>
           <Nav.Link href='/books/admin'>Admin</Nav.Link>
