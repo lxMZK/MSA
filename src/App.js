@@ -24,27 +24,10 @@ function App() {
     fetchData()
   })
 
-  const [value, setValue] = useState("")
-
-  const onChange = (event) => {
-    setValue(event.target.value)
-  }
-
-  const onSearch = (searchTerm) => {
-    // our api fetch the search results
-    console.log("search ", searchTerm)
-  }
-
   return (
 
     <div className="App">
       <Router>
-        <div className="search-container">
-          <div className="search-inner">
-            <input type="text" value={value} onChange={onChange} />
-            <button onClick={() => onSearch(value)}> Search</button>
-          </div>
-        </div>
         <NavbarComp path={window.location.pathname} />
         {/* <h1>Bookstore Library & Stock keeping app</h1>
               <h4>coming soon . . .</h4>
@@ -56,7 +39,7 @@ function App() {
 
 
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home books={returnedData} />} />
           <Route path="/BestSelling" element={<BestSelling />} />
           <Route path="/Genres" element={<Genres />} />
           <Route path="/TopRated" element={<TopRated />} />

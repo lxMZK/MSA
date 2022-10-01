@@ -1,15 +1,19 @@
-import React, { Component } from 'react'
+import React from 'react'
+import BookCard from './BookCard'
 
-export default class extends Component {
-  render() {
+export default function Home(props) {
+  const books = props.books.map(book => {
     return (
-      <div>hELLO woELSD
-
-
-
-
-
-      </div>
+      <BookCard book={book} />
     )
-  }
+  })
+
+  return (
+    <div className='home'>
+      <h1>Check Out Our Books!</h1>
+      <div className='gallery'>
+        {books}
+      </div>
+    </div>
+  )
 }

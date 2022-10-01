@@ -12,6 +12,11 @@ h1 {
   margin: 0;
 }
 
+/* NAV */
+.navbar {
+  justify-content: space-between;
+}
+
 /* BOOK */
 .card {
   width: 20rem;
@@ -29,6 +34,7 @@ h1 {
 
 .coverContainer:hover {
   overflow: visible;
+  z-index: 1;
 }
 
 .bookCover {
@@ -41,6 +47,7 @@ h1 {
   transform: scale(1.1);
   border-radius: 20px;
   margin: 0 0 -200px 0;
+  box-shadow: 10px 10px 5px darkgrey;
 }
 
 .bookInfo {
@@ -122,4 +129,10 @@ h1 {
 .deleteForm > div > * {
   padding: .5em;
   margin-right: 5vw;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
