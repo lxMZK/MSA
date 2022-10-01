@@ -25,11 +25,15 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },
         description: {
-            type: DataTypes.STRING,
-            allowNull: false
+            type: DataTypes.STRING
         },
         amount_available: {
             type: DataTypes.SMALLINT,
+            allowNull: false
+        },
+        amount_sold: {
+            type: DataTypes.INTEGER,
+            defaultValue: 0,
             allowNull: false
         },
         price: {
@@ -40,6 +44,9 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.DECIMAL(2, 1),
             allowNull: false
         },
+        img_url: {
+            type: DataTypes.STRING
+        }
     }, {
         sequelize,
         modelName: 'Book',

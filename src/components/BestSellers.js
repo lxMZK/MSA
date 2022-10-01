@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function Home(props) {
+export default function BestSellers(props) {
   return (
-    <div className='home'>
-      <h1>Check Out Our Books!</h1>
+    <div>
+      <h1>Check Out Our Best Sellers!</h1>
       <div className='gallery'>
         {props.books}
       </div>

@@ -1,49 +1,64 @@
 import "./App.css";
-import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import NavbarComp from "./components/Navbar";
 import Home from "./components/Home";
-import BestSelling from "./components/BestSelling";
-import Genres from "./components/Genres";
+import BestSellers from "./components/BestSellers";
 import TopRated from "./components/TopRated";
 import Admin from "./components/admin";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import BookCard from "./components/BookCard";
 
 function App() {
-  const [returnedData, setReturnedData] = useState([])
+  const [booksDefault, setBooksDefault] = useState([])
+  const [booksBySale, setBooksBySale] = useState([])
+  const [booksByRating, setBooksByRating] = useState([])
 
   const fetchData = async () => {
-    const response = await fetch('/books', {
+    // Sort By Default
+    let response = await fetch('/books', {
       method: 'POST'
     })
-    const resData = await response.json()
-    setReturnedData(resData)
+    let resData = await response.json()
+    setBooksDefault(resData)
+
+    // Sort By Sales
+    response = await fetch('/books/bestsellers', {
+      method: 'POST'
+    })
+    resData = await response.json()
+    setBooksBySale(resData)
+
+    // Sort By Rating
+    response = await fetch('/books/toprated', {
+      method: 'POST'
+    })
+    resData = await response.json()
+    setBooksByRating(resData)
   }
 
   useEffect(() => {
     fetchData()
-  })
+  }, [])
+
+  const booksFormatted = (books) =>{
+    return books.map(book => {
+      return (
+        <BookCard book={book} />
+      )
+    })
+  }
 
   return (
 
     <div className="App">
       <Router>
         <NavbarComp path={window.location.pathname} />
-        {/* <h1>Bookstore Library & Stock keeping app</h1>
-              <h4>coming soon . . .</h4>
-              <br />
-              <br />
-              <h3>Tavoy Walls / Alex Mizak / Quenton Powell</h3>
-              <br />
-              <br /> */}
-
-
         <Routes>
-          <Route path="/" element={<Home books={returnedData} />} />
-          <Route path="/BestSelling" element={<BestSelling />} />
-          <Route path="/Genres" element={<Genres />} />
-          <Route path="/TopRated" element={<TopRated />} />
-          <Route path="/Books/Admin" element={<Admin books={returnedData} />} />
+          <Route path="/" element={<Home books={booksFormatted(booksDefault)} />} />
+          <Route path="/BestSellers" element={<BestSellers books={booksFormatted(booksBySale)} />} />
+          <Route path="/TopRated" element={<TopRated books={booksFormatted(booksByRating)} />} />
+          <Route path="/Books/Admin" element={<Admin books={booksDefault} />} />
         </Routes>
       </Router>
     </div>

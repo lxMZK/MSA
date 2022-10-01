@@ -2,22 +2,21 @@ import React from 'react'
 import { Nav, Navbar } from 'react-bootstrap';
 
 
-function StackedExample(props) {
+export default function Navigation(props) {
 
   return props.path === '/books/admin' ?
     (
-      <Navbar bg='dark' variant='dark'>
+      <Navbar fixed='top' bg='dark' variant='dark'>
         <Nav defaultActiveKey="/home">
           <Nav.Link href="/">Home</Nav.Link>
         </Nav>
       </Navbar>
     ) : (
-      <Navbar className='justify-content-between' bg='dark' variant='dark'>
+      <Navbar fixed='top' className='justify-content-between' bg='dark' variant='dark'>
         <Nav defaultActiveKey="/home">
           <Nav.Link href="/">Home</Nav.Link>
-          <Nav.Link href="/Genres">Genres</Nav.Link>
-          <Nav.Link href="/BestSelling">BestSelling</Nav.Link>
-          <Nav.Link href="/TopRated">TopRated</Nav.Link>
+          <Nav.Link href="/BestSellers">Best Sellers</Nav.Link>
+          <Nav.Link href="/TopRated">Top Rated</Nav.Link>
         </Nav>
         <Nav>
           <Nav.Link href='/books/admin'>Admin</Nav.Link>
@@ -25,5 +24,3 @@ function StackedExample(props) {
       </Navbar>
     )
 }
-
-export default StackedExample;
