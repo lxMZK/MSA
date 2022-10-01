@@ -2,9 +2,9 @@ const {
     Model
 } = require('sequelize')
 module.exports = (sequelize, DataTypes) => {
-    
+
     class Book extends Model {
-        
+
         static associate() {
 
         }
@@ -37,7 +37,7 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },
         rating: {
-            type: DataTypes.DECIMAL(2,1),
+            type: DataTypes.DECIMAL(2, 1),
             allowNull: false
         },
     }, {

@@ -4,7 +4,7 @@ import { Card } from 'react-bootstrap'
 export default function BookCard(props) {
     const details = (e) => {
         const desc = e.target.parentNode.parentNode.querySelector('.bookDesc')
-        if(desc.classList.contains('lessDetails')) {
+        if (desc.classList.contains('lessDetails')) {
             desc.classList.remove('lessDetails')
             e.target.innerHTML = 'Read less'
             return;
