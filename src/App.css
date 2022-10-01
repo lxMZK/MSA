@@ -79,3 +79,7 @@ h1 {
 .details:hover {
   cursor: pointer;
 }
+
+.search-inner {
+  margin-left: 1140px;
+}
