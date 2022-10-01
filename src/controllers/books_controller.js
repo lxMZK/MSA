@@ -11,14 +11,24 @@ books.post('/', async (req,res)=>{
     }
 })
 
-books.post('/new', async (req,res)=>{
+books.post('/admin', async (req,res)=>{
     try{
         const newBook = await Book.create(req.body)
-        res.status(200).json({
-            message: 'Successfully inserted a new book',
-            data: newBook
-        })
+        res.status(200).json("Book successfully added to database")
     }  catch(err){
+        res.status(500).json(err)
+    }
+})
+
+books.post('/admin/:id', async (req,res)=>{
+    try{
+        const deletedBooks = await Book.destroy({
+            where: {
+                isbn: req.params.id
+            }
+        })
+        res.status(200).json('Book successfully deleted from database')
+    } catch(err) {
         res.status(500).json(err)
     }
 })

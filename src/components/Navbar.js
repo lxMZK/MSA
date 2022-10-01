@@ -4,7 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 
 function StackedExample(props) {
 
-  return props.path === '/admin' ?
+  return props.path === '/books/admin' ?
     (<Nav defaultActiveKey="/home" className="flex-column">
       <Nav.Link href="/">Home</Nav.Link>
     </Nav>) :

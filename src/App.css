@@ -1,13 +1,18 @@
+html,
 .App {
   text-align: center;
   background-color: lightgray;
-  height: 100vh;
+}
+
+.search-inner {
+  margin-left: 1140px;
 }
 
 h1 {
   margin: 0;
 }
 
+/* BOOK */
 .card {
   width: 20rem;
   display: inline-block;
@@ -80,6 +85,41 @@ h1 {
   cursor: pointer;
 }
 
-.search-inner {
-  margin-left: 1140px;
+/* ADMIN */
+.addForm,
+.deleteForm {
+  background-color: whitesmoke;
+  padding: 50px 0 50px 0;
+  border-radius: 3px;
+  text-align: right;
+  margin: 5vh 20vw 5vh;
+}
+
+.deleteForm {
+  text-align: center;
+}
+
+.container,
+.deleteForm > div {
+  display: flex;
+  justify-content: flex-end;
+  padding: .5em;
+}
+
+.container > label,
+.deleteForm > div > label {
+  padding: .5em 1em .5em 0;
+  flex: 1;
+  margin-left: 5vw;
+}
+
+.container > input,
+.deleteForm > div > button {
+  flex: 2;
+}
+
+.container > *,
+.deleteForm > div > * {
+  padding: .5em;
+  margin-right: 5vw;
 }

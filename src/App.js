@@ -60,7 +60,7 @@ function App() {
           <Route path="/BestSelling" element={<BestSelling />} />
           <Route path="/Genres" element={<Genres />} />
           <Route path="/TopRated" element={<TopRated />} />
-          <Route path="/Admin" element={<Admin />} />
+          <Route path="/Books/Admin" element={<Admin books={returnedData} />} />
         </Routes>
       </Router>
     </div>
