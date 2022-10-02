@@ -48,7 +48,7 @@ function App() {
 
   useEffect(() => {
     fetchData()
-  })
+  }, [])
 
   const booksFormatted = (books) => {
     return books.map(book => {
