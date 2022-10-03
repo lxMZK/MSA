@@ -53,23 +53,27 @@ books.post('/admin', async (req, res) => {
     }
 })
 
-books.post('/admin/:id', async (req, res) => {
+books.post('/admin/:id/update', async (req,res) => {
     try {
-        const deletedBooks = await Book.destroy({
+        const updatedBook = await Book.update(req.body, {
             where: {
                 isbn: req.params.id
             }
         })
-        res.status(200).json('Book successfully deleted from database')
+        res.status(200).json("Book successfully updated to the database")
     } catch (err) {
         res.status(500).json(err)
     }
 })
 
-books.get('/', async (req, res) => {
+books.post('/admin/:id/delete', async (req, res) => {
     try {
-        const foundBooks = await Book.findAll()
-        res.status(200).json(foundBooks)
+        const deletedBook = await Book.destroy({
+            where: {
+                isbn: req.params.id
+            }
+        })
+        res.status(200).json('Book successfully deleted from database')
     } catch (err) {
         res.status(500).json(err)
     }

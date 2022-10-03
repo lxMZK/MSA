@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 export default function Admin(props) {
     const [isbn, setIsbn] = useState()
 
-    const handleClick = (e) => {
+    const handleBook = (e) => {
         setIsbn(e.target.value)
     }
 
@@ -11,7 +11,7 @@ export default function Admin(props) {
         return (
             <div>
                 <label>{book.title}</label>
-                <button value={book.isbn} onClick={handleClick}>Delete</button>
+                <button value={book.isbn + '/delete'} onClick={handleBook}>Delete</button>
             </div>
         )
     })
@@ -22,10 +22,10 @@ export default function Admin(props) {
 
             <iframe id='results' name='results' />
             <h3>Add New Book:</h3>
-            <form className='addForm' method={'POST'} target='results'>
+            <form className='addForm' method={'POST'} action='/books/admin' target='results'>
                 <div className='container'>
                     <label htmlFor='isbn'>ISBN: </label>
-                    <input type='number' id='isbn' name='isbn' min='0' required />
+                    <input type='number' id='isbn' name='isbn' min='0' required onChange={handleBook} />
                 </div>
                 <div className='container'>
                     <label htmlFor='title'>Title: </label>
@@ -56,7 +56,8 @@ export default function Admin(props) {
                     <input type='url' id='img_url' name='img_url' />
                 </div>
                 <div className='container'>
-                    <button type='submit'>Submit</button>
+                    <button type='submit'>Add New Book</button>
+                    <button type='submit' formAction={`/books/admin/${isbn}/update`} >Update Existing Book (ISBN must match!)</button>
                 </div>
             </form>
             <br />
