@@ -1,6 +1,6 @@
 # MERN Stack App Group Project
 
-Tavoy Walls / Alex Mizak / Quenton Powell
+** Tavoy Walls / Alex Mizak / Quenton Powell
 
 General Requirements
 - This is a group project!
