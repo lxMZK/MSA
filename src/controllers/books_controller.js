@@ -11,6 +11,14 @@ books.post('/', async (req, res) => {
     }
 })
 
+books.post('/:id/buy', async (req, res) => {
+    try {
+        Book.increment('amount_sold', { where: { isbn: req.params.id } })
+    } catch (err) {
+        res.status(500).json(err)
+    }
+})
+
 books.post('/bestsellers', async (req, res) => {
     try {
         const foundBooks = await Book.findAll({
@@ -53,7 +61,7 @@ books.post('/admin', async (req, res) => {
     }
 })
 
-books.post('/admin/:id/update', async (req,res) => {
+books.post('/admin/:id/update', async (req, res) => {
     try {
         const updatedBook = await Book.update(req.body, {
             where: {

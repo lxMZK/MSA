@@ -51,9 +51,9 @@ function App() {
   })
 
   const booksFormatted = (books) => {
-    return books.map(book => {
+    return books.map((book,i) => {
       return (
-        <BookCard book={book} />
+        <BookCard key={i} book={book} />
       )
     })
   }
