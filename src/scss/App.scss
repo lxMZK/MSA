@@ -1,0 +1,25 @@
+@import "bookConfig", "adminConfig";
+
+/* PAGE */
+html,
+.App {
+  text-align: center;
+  background-color: lightgray;
+}
+
+h1 {
+  margin: 0;
+  padding-top: 100px;
+}
+
+/* NAV */
+.navbar {
+  justify-content: space-between;
+}
+
+/* GALLERY */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

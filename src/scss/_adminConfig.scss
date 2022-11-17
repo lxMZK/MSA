@@ -1,0 +1,58 @@
+%form {
+    background-color: whitesmoke;
+    padding: 50px 0 50px 0;
+    border-radius: 3px;
+    text-align: right;
+    margin: 5vh 20vw 5vh;
+}
+
+%around {
+    padding: .5em;
+    margin-right: 5vw;
+}
+
+%outter {
+    display: flex;
+    justify-content: flex-end;
+    padding: .5em;
+}
+
+%inner {
+    padding: .5em 1em .5em 0;
+    flex: 1;
+    margin-left: 5vw;
+}
+
+.addForm {
+    @extend %form;
+}
+
+.deleteForm {
+    @extend %form;
+    text-align: center;
+    div {
+        @extend %outer;
+        *{
+            @extend %around;
+        }
+        label {
+            @extend %inner;
+        }
+        button {
+            flex: 2;
+        }
+    }
+}
+
+.container {
+    @extend %cont;
+    * {
+        @extend %around;
+    }
+    label {
+        @extend %inner;
+    }
+    input {
+        flex: 2;
+    }
+}

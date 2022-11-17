@@ -1,3 +1,110 @@
+.card {
+  width: 20rem;
+  display: inline-block;
+  margin: 20px;
+  background-color: white;
+  border-radius: 20px;
+}
+.card .coverContainer {
+  height: 150px;
+  overflow: hidden;
+  transition: all 1s;
+}
+.card .coverContainer img {
+  border-radius: 20px 20px 0 0;
+  width: 20rem;
+  transition: all 250ms;
+}
+.card .coverContainer img:hover {
+  transform: scale(1.1);
+  border-radius: 20px;
+  margin: 0 0 -200px 0;
+  box-shadow: 10px 10px 5px darkgrey;
+}
+.card .coverContainer:hover {
+  overflow: visible;
+  z-index: 1;
+}
+.card .bookInfo {
+  text-align: left;
+  padding: 0 10px 10px 10px;
+}
+.card .bookInfo .bookAuthor {
+  padding-bottom: 10px;
+}
+.card .bookInfo .details {
+  margin: 0 0 25px 0;
+  color: blue;
+}
+.card .bookInfo .details:hover {
+  cursor: pointer;
+}
+.card .bookInfo .lessDetails {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+}
+
+.bookContainer {
+  display: flex;
+  justify-content: space-between;
+}
+.bookContainer .bookSold {
+  text-align: right;
+}
+.bookContainer .bookTitle {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.card-text {
+  margin: 0;
+}
+
+.deleteForm, .addForm {
+  background-color: whitesmoke;
+  padding: 50px 0 50px 0;
+  border-radius: 3px;
+  text-align: right;
+  margin: 5vh 20vw 5vh;
+}
+
+.container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.5em;
+}
+
+.deleteForm {
+  text-align: center;
+}
+
+.container,
+.deleteForm > div {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.5em;
+}
+
+.container > label,
+.deleteForm > div > label {
+  padding: 0.5em 1em 0.5em 0;
+  flex: 1;
+  margin-left: 5vw;
+}
+
+.container > input,
+.deleteForm > div > button {
+  flex: 2;
+}
+
+.container > *,
+.deleteForm > div > * {
+  padding: 0.5em;
+  margin-right: 5vw;
+}
+
 html,
 .App {
   text-align: center;
@@ -18,127 +125,10 @@ h1 {
   justify-content: space-between;
 }
 
-/* BOOK */
-.card {
-  width: 20rem;
-  display: inline-block;
-  margin: 20px;
-  background-color: white;
-  border-radius: 20px;
-}
-
-.coverContainer {
-  height: 150px;
-  overflow: hidden;
-  transition: all 1s;
-}
-
-.coverContainer:hover {
-  overflow: visible;
-  z-index: 1;
-}
-
-.bookCover {
-  border-radius: 20px 20px 0 0;
-  width: 20rem;
-  transition: all 250ms;
-}
-
-.bookCover:hover {
-  transform: scale(1.1);
-  border-radius: 20px;
-  margin: 0 0 -200px 0;
-  box-shadow: 10px 10px 5px darkgrey;
-}
-
-.bookInfo {
-  text-align: left;
-  padding: 0 10px 10px 10px;
-}
-
-.bookContainer {
-  display: flex;
-  justify-content: space-between;
-}
-
-.bookTitle {
-  font-size: 20px;
-  font-weight: 500;
-}
-
-.bookAuthor {
-  padding-bottom: 10px;
-}
-
-.bookSold {
-  text-align: right;
-}
-
-.details {
-  margin: 0 0 25px 0;
-}
-
-.lessDetails {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 4;
-}
-
-.card-text {
-  margin: 0;
-}
-
-.details {
-  color: blue;
-}
-
-.details:hover {
-  cursor: pointer;
-}
-
 /* ADMIN */
-.addForm,
-.deleteForm {
-  background-color: whitesmoke;
-  padding: 50px 0 50px 0;
-  border-radius: 3px;
-  text-align: right;
-  margin: 5vh 20vw 5vh;
-}
-
-.deleteForm {
-  text-align: center;
-}
-
-.container,
-.deleteForm > div {
-  display: flex;
-  justify-content: flex-end;
-  padding: .5em;
-}
-
-.container > label,
-.deleteForm > div > label {
-  padding: .5em 1em .5em 0;
-  flex: 1;
-  margin-left: 5vw;
-}
-
-.container > input,
-.deleteForm > div > button {
-  flex: 2;
-}
-
-.container > *,
-.deleteForm > div > * {
-  padding: .5em;
-  margin-right: 5vw;
-}
-
 /* GALLERY */
 .gallery {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-}
+}/*# sourceMappingURL=App.css.map */

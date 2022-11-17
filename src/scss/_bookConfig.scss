@@ -1,0 +1,79 @@
+.card {
+    width: 20rem;
+    display: inline-block;
+    margin: 20px;
+    background-color: white;
+    border-radius: 20px;
+
+    
+    .coverContainer {
+      height: 150px;
+      overflow: hidden;
+      transition: all 1s;
+
+      img {
+        border-radius: 20px 20px 0 0;
+        width: 20rem;
+        transition: all 250ms;
+
+
+        &:hover {
+            transform: scale(1.1);
+            border-radius: 20px;
+            margin: 0 0 -200px 0;
+            box-shadow: 10px 10px 5px darkgrey;
+          }
+      }
+
+
+      &:hover {
+        overflow: visible;
+        z-index: 1;
+      }
+    }
+
+    .bookInfo {
+        text-align: left;
+        padding: 0 10px 10px 10px;
+      
+        .bookAuthor {
+            padding-bottom: 10px;
+        }
+          
+          
+        .details {
+            margin: 0 0 25px 0;
+            color: blue;
+  
+    &:hover {
+      cursor:pointer;
+    }
+        }
+
+        .lessDetails {
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 4;
+        }
+    }
+}
+
+  
+  .bookContainer {
+    display: flex;
+    justify-content: space-between;
+
+    .bookSold {
+        text-align: right;
+    }
+
+    .bookTitle {
+        font-size: 20px;
+        font-weight: 500;
+    }
+}
+  
+.card-text {
+    margin: 0;
+}
