@@ -1,10 +1,10 @@
-@import "bookConfig", "adminConfig";
+@import "config", "bookConfig", "adminConfig";
 
 /* PAGE */
 html,
 .App {
   text-align: center;
-  background-color: lightgray;
+  background-color: $background-color;
 }
 
 h1 {

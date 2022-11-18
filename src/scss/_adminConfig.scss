@@ -1,5 +1,7 @@
+@import "config";
+
 %form {
-    background-color: whitesmoke;
+    background-color: $foreground-color;
     padding: 50px 0 50px 0;
     border-radius: 3px;
     text-align: right;
